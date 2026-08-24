@@ -86,3 +86,90 @@ P 3: 3 @ = 82,673 lb
 --- Resumen ---
 Total kg equivalente: 58,144 kg
 ¡Gracias por comprar en la plaza!
+```
+---
+
+## Reto 5 — La Moto Personalizada
+
+### Patrón de Diseño
+
+**Categoría:** Estructural
+
+**Patrón utilizado:** Decorator
+
+### Justificación
+
+Se utiliza el patrón Decorator porque la moto puede recibir diferentes accesorios, pinturas y complementos de manera dinámica.
+
+Este patrón permite agregar nuevas mejoras sin modificar la clase base `MotoBase`, cumpliendo con el principio Abierto/Cerrado (OCP).
+
+Cada mejora envuelve una moto existente y agrega su propia descripción y precio.
+
+### Cómo se aplicó
+
+La solución utiliza una interfaz `Moto`, que define las operaciones comunes:
+
+- `getDescripcion()`
+- `getPrecio()`
+
+La clase `MotoBase` representa la moto original:
+
+- Naked 250
+- Precio base: $9.800.000
+
+La clase abstracta `DecoradorMoto` mantiene una referencia a una `Moto` y sirve como base para las diferentes mejoras.
+
+Los decoradores concretos son:
+
+- `EscapeDeportivo`: agrega $1.400.000.
+- `PinturaMateNegro`: agrega $900.000.
+- `BaulTrasero`: agrega $550.000.
+
+Las mejoras se pueden encadenar:
+
+    MotoBase
+        ↓
+    EscapeDeportivo
+        ↓
+    PinturaMateNegro
+        ↓
+    BaulTrasero
+
+De esta manera, cada decorador agrega su propia descripción y precio sin modificar las clases anteriores.
+
+### Aplicación de SOLID
+
+**Open/Closed Principle (OCP):**
+
+La clase `MotoBase` no necesita modificarse cuando se agrega una nueva mejora. Para incorporar una nueva mejora basta con crear un nuevo decorador que implemente el comportamiento correspondiente.
+
+**Single Responsibility Principle (SRP):**
+
+Cada clase tiene una responsabilidad específica:
+
+- `Moto`: define el contrato de una moto.
+- `MotoBase`: representa la moto base.
+- `DecoradorMoto`: proporciona la estructura común para los decoradores.
+- `EscapeDeportivo`: agrega el escape deportivo.
+- `PinturaMateNegro`: agrega la pintura mate negro.
+- `BaulTrasero`: agrega el baúl trasero.
+- `Reto5MotoPersonalizada`: ejecuta el reto y muestra el resultado.
+
+### Resultado de ejecución
+
+```text
+Taller Turbo Andes
+Moto base: Naked 250
+Precio base: $9.800.000
+
+--- Tu Moto ---
+Naked 250 + Escape deportivo + Pintura mate negro + Baúl trasero
+
+Descripción:
+Naked 250 con escape deportivo,
+pintura mate negro y baúl trasero
+
+Precio base: $9.800.000
+Mejoras: $2.850.000
+Total: $12.650.000
+¡Buen viaje!
