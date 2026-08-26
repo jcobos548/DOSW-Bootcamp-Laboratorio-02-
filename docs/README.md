@@ -173,3 +173,76 @@ Precio base: $9.800.000
 Mejoras: $2.850.000
 Total: $12.650.000
 ¡Buen viaje!
+```
+---
+
+## Reto 6 — Sala de Urgencias
+
+### Patrón de Diseño
+
+**Categoría:** Comportamiento
+
+**Patrón utilizado:** Chain of Responsibility
+
+### Justificación
+
+Se utiliza el patrón Chain of Responsibility porque los pacientes son atendidos mediante una cadena de profesionales. Cada profesional decide si puede atender el caso y, si no puede, lo pasa al siguiente profesional de la cadena.
+
+La cadena está formada por:
+
+    Enfermero
+        ↓
+    Médico General
+        ↓
+    Especialista
+        ↓
+    Otra institución
+
+Esto permite agregar o cambiar profesionales de la cadena sin modificar los demás participantes.
+
+### Cómo se aplicó
+
+La clase `Paciente` representa los datos de cada paciente:
+
+- Síntoma.
+- Nivel.
+- Prioridad.
+
+Los niveles posibles son:
+
+- Leve.
+- Moderado.
+- Grave.
+- Crítico.
+
+La clase abstracta `Profesional` representa el manejador de la cadena y mantiene una referencia al siguiente profesional.
+
+Los profesionales concretos son:
+
+- `Enfermero`: atiende pacientes de nivel Leve.
+- `MedicoGeneral`: atiende pacientes de nivel Moderado.
+- `Especialista`: atiende pacientes de nivel Grave.
+
+Los pacientes de nivel Crítico no pueden ser atendidos por ninguno de los profesionales disponibles y son remitidos a otra institución.
+
+### Estadísticas
+
+Las estadísticas se calculan utilizando Streams:
+
+- Cantidad de pacientes atendidos por nivel.
+- Cantidad de pacientes remitidos.
+- Promedio de prioridad de los pacientes atendidos.
+
+### Resultado de ejecución
+
+```text
+P1: Enfermero atendió.
+P2: Médico General atendió.
+P3: Especialista atendió.
+P4: Sin profesional disponible.
+Paciente remitido a otra institución.
+
+--- Estadísticas ---
+Atendidos - Leve: 1 Moderado: 1 Grave: 1
+Remitidos a otra institución: 1
+Promedio prioridad atendidos: 2.0
