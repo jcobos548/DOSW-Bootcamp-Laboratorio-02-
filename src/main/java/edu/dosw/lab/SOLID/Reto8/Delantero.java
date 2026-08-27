@@ -1,4 +1,4 @@
-package edu.dosw.lab.SOLID.reto1.Reto8.reto8;
+package edu.dosw.lab.SOLID.Reto8;
 
 public class Delantero extends JugadorBase {
 

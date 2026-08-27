@@ -1,19 +1,19 @@
-package edu.dosw.lab.SOLID.reto1.Reto8.reto8;
+package edu.dosw.lab.SOLID.Reto8;
 
-public class Defensa extends JugadorBase {
+public class Arquero extends JugadorBase {
 
-    public Defensa(String nombre, int edad, int dorsal, String pieHabil,
+    public Arquero(String nombre, int edad, int dorsal, String pieHabil,
                     double peso, double altura, String estadoFisico, String categoria) {
         super(nombre, edad, dorsal, pieHabil, peso, altura, estadoFisico, categoria);
     }
 
     @Override
     public String getPosicion() {
-        return "Defensa";
+        return "Arquero";
     }
 
     @Override
     public void patear() {
-        System.out.println(getNombre() + " (Defensa) despeja el balón lejos del área.");
+        System.out.println(getNombre() + " (Arquero) despeja el balón con fuerza desde el fondo.");
     }
 }
