@@ -25,6 +25,31 @@ Porque una clase debería tener una sola responsabilidad, así es más fácil ma
 
 # Parte 2 — Hackathon Express
 
+## Reto 1 — La Boleteria del Cine Astor
+
+Para resolver este ejercicio solo aplicamos el uso de SOLID y Programacion orientada a objetos
+
+## Reto 2 —  El Sastre a la Medida
+
+### Patrón de Diseño
+
+**Categoría:** Estructural
+
+**Patrón utilizado:** Builder
+
+Lo usamos ya que requerimos construir un objeto paso a paso
+
+## Reto 3 — La Fabrica de Instrumentos
+
+
+## Reto 4 — La Balanza Trucada del Mercado
+
+### Patrón de Diseño
+
+**Categoría:** Estructural
+
+**Patrón utilizado:** Adapter
+
 ## Reto 4 — La Balanza Trucada del Mercado
 
 ### Patrón de Diseño
