@@ -41,6 +41,13 @@ Lo usamos ya que requerimos construir un objeto paso a paso
 
 ## Reto 3 — La Fabrica de Instrumentos
 
+### Patrón de Diseño
+
+**Categoría:** Creacional
+
+**Patrón utilizado:**  Abstract Factory
+
+Usamos este patron de diseño creacional que nos permite producir familias de objetos relacionados sin especificar sus clases concretas
 
 ## Reto 4 — La Balanza Trucada del Mercado
 
