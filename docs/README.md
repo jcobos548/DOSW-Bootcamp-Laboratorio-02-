@@ -330,3 +330,8 @@ Por ejemplo:
 
 ```java
 historial.deshacer(3);
+
+
+## Reto 8 — La Academia de Fútbol de los UML
+
+Para resolver este ejercicio solo aplicamos el uso de SOLID y Programacion orientada a objeto
