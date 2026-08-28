@@ -246,3 +246,55 @@ Paciente remitido a otra institución.
 Atendidos - Leve: 1 Moderado: 1 Grave: 1
 Remitidos a otra institución: 1
 Promedio prioridad atendidos: 2.0
+```
+## Reto 7 — Rover Explorador de Marte
+
+### Patrón de Diseño
+
+**Categoría:** Comportamiento
+
+**Patrón utilizado:** Command
+
+### Justificación
+
+Se utiliza el patrón Command porque cada acción del rover se representa como un objeto comando. Esto permite encapsular las operaciones del rover y mantener un historial de las acciones realizadas.
+
+Cada comando puede ejecutarse y deshacerse individualmente mediante la operación `undo`.
+
+### Cómo se aplicó
+
+La interfaz `Comando` define las operaciones que deben realizar los comandos:
+
+- Ejecutar una acción.
+- Deshacer una acción.
+- Obtener la descripción de la acción.
+- Obtener el operador que realizó la acción.
+
+La clase `Rover` representa el receptor y contiene las operaciones que puede realizar:
+
+- Avanzar.
+- Retroceder.
+- Recoger muestras.
+- Soltar muestras.
+- Grabar con la cámara.
+- Detener la cámara.
+- Perforar.
+- Retraer el taladro.
+
+Los comandos concretos son:
+
+- `ComandoMotor`
+- `ComandoBrazo`
+- `ComandoCamara`
+- `ComandoTaladro`
+
+La clase `Historial` almacena los comandos ejecutados y permite deshacer una acción específica sin afectar las demás.
+
+### Historial y Undo
+
+El historial registra cada acción junto con el operador que la realizó. Las acciones pueden deshacerse individualmente utilizando su número dentro del historial.
+
+Por ejemplo:
+
+```java
+historial.deshacer(3);

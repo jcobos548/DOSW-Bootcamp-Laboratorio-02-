@@ -6,8 +6,8 @@ import edu.dosw.lab.creacionales.reto3.Reto3FabricaInstrumentos;
 import edu.dosw.lab.estructurales.reto4.Reto4BalanzaTrucada;
 import edu.dosw.lab.estructurales.reto5.Reto5MotoPersonalizada;
 import edu.dosw.lab.comportamiento.reto6.Reto6SalaUrgencias;
-import edu.dosw.lab.comportamiento.reto7.Reto7RoverExplorador;
-import edu.dosw.lab.SOLID.reto8.Reto8AcademiaFutbol;
+import edu.dosw.lab.comportamiento.reto7.Reto7RoverMarte;
+import edu.dosw.lab.SOLID.Reto8.Reto8AcademiaFutbol;
 
 import java.util.Scanner;
 
@@ -39,30 +39,39 @@ public class Application {
 				case 1:
 					Reto1BoleteriaAstor.ejecutar();
 					break;
+
 				case 2:
 					Reto2SastreMedida.ejecutar();
 					break;
+
 				case 3:
 					Reto3FabricaInstrumentos.ejecutar();
 					break;
+
 				case 4:
 					Reto4BalanzaTrucada.ejecutar();
 					break;
+
 				case 5:
 					Reto5MotoPersonalizada.ejecutar();
 					break;
+
 				case 6:
 					Reto6SalaUrgencias.ejecutar();
 					break;
+
 				case 7:
-					Reto7RoverExplorador.ejecutar();
+					Reto7RoverMarte.ejecutar();
 					break;
+
 				case 8:
 					Reto8AcademiaFutbol.ejecutar();
 					break;
+
 				case 0:
 					System.out.println("Fin del laboratorio.");
 					break;
+
 				default:
 					System.out.println("Opción no válida.");
 			}
